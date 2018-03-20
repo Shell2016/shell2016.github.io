@@ -16,10 +16,11 @@
                 <form action="https://echo.htmlacademy.ru" method="post" class="search-form">
                     <label class="visually-hidden" for="user-search">Поле поиска</label>
                     <input class="search-field" type="search" name="search" id="user-search" placeholder="Поиск:">
+                    <span class="icon-search"></span>
                 </form>
                 <ul class="order-list">
-                    <li class="order-list-item bookmarks"><a href="#">Закладки:0</a></li>
-                    <li class="order-list-item cart"><a href="#">Корзина:0</a></li>
+                    <li class="order-list-item bookmarks"><a href="#">Закладки:<span class="bookmarks-count"> 0</span></a></li>
+                    <li class="order-list-item cart"><a href="#">Корзина:<span class="cart-count"> 0</span></a></li>
                     <li class="order-list-item order"><a href="#">Оформить заказ</a></li>
                 </ul>
             </div>
@@ -30,7 +31,7 @@
                 <p class="header-shop-description">Интернет-магазин строительных материалов и инструментов для ремонта</p>
                 <div class="phone-address">
                     <p class="header-phone">+7 (812) 555-05-55</p>
-                    <p class="header-address">г.Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
+                    <p class="header-address">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
                 </div>
                 <div class="user-block">
                     <ul>
@@ -105,8 +106,8 @@
                             <p class="slider-slogan">Настоящие мужские игрушки</p>
                             <a class="btn" href="catalog.html">Открыть каталог</a>
                         </div>
-                        <button class="promo-left-control" type="button">Влево</button>
-                        <button class="promo-right-control" type="button">Вправо</button>
+                        <button class="promo-control promo-left-control" type="button"><span class="visually-hidden">Влево</span></button>
+                        <button class="promo-control promo-right-control" type="button"><span class="visually-hidden">Вправо</span></button>
                     </div>
                 </div>
             </section>
@@ -124,7 +125,7 @@
                             <a class="btn bookmark-btn" href="#">В закладки</a>
                         </div>
                         <div class="product-image">
-                            <img src="img/drill_9000.jpg" alt="BOSCH BFG 9000" width="218" height="150">
+                            <img src="img/drill_9000.jpg" alt="BOSCH BFG 9000" width="220" height="150">
                         </div>
                         <h3>Перфоратор BOSCH BFG 9000</h3>
                         <span class="price old-price">32500 Р.</span>
@@ -138,7 +139,7 @@
                             <a class="btn bookmark-btn" href="#">В закладки</a>
                         </div>
                         <div class="product-image">
-                            <img src="img/drill_2000_3000.jpg" alt="BOSCH BFG 3000" width="218" height="150">
+                            <img src="img/drill_2000_3000.jpg" alt="BOSCH BFG 3000" width="220" height="150">
                         </div>
                         <h3>Перфоратор BOSCH BFG 3000</h3>
                         <span class="price old-price">25500 Р.</span>
@@ -152,7 +153,7 @@
                             <a class="btn bookmark-btn" href="#">В закладки</a>
                         </div>
                         <div class="product-image">
-                            <img src="img/drill_6000.jpg" alt="BOSCH BFG 6000" width="218" height="150">
+                            <img src="img/drill_6000.jpg" alt="BOSCH BFG 6000" width="220" height="150">
                         </div>
                         <h3>Перфоратор BOSCH BFG 6000</h3>
                         <span class="price old-price">30500 Р.</span>
@@ -166,7 +167,7 @@
                             <a class="btn bookmark-btn" href="#">В закладки</a>
                         </div>
                         <div class="product-image">
-                            <img src="img/drill_2000_3000.jpg" alt="BOSCH BFG 2000" width="218" height="150">
+                            <img src="img/drill_2000_3000.jpg" alt="BOSCH BFG 2000" width="220" height="150">
                         </div>
                         <h3>Перфоратор BOSCH BFG 2000</h3>
                         <span class="price old-price"></span>
@@ -184,13 +185,13 @@
                 </div>
                 <ul class="manufacturers-list">
                     <li class="manufacturers-item"><a href="#"><img src="img/bosch.jpg" alt="Bosch" width="126" height="37"></a></li>
-                    <li class="manufacturers-item"><a href="#"><img src="img/_makita.jpg" alt="Makita" width="123" height="40"></a></li>
-                    <li class="manufacturers-item"><a href="#"><img src="img/_dewalt.jpg" alt="Dewalt" width="146" height="44"></a></li>
-                    <li class="manufacturers-item"><a href="#"><img src="img/_interskol.jpg" alt="Интерскол" width="184" height="32"></a></li>
-                    <li class="manufacturers-item"><a href="#"><img src="img/_hitachi.jpg" alt="Hitachi" width="169" height="31"></a></li>
-                    <li class="manufacturers-item"><a href="#"><img src="img/_lg.jpg" alt="LG" width="121" height="73"></a></li>
-                    <li class="manufacturers-item"><a href="#"><img src="img/_aeg.jpg" alt="AEG" width="151" height="96"></a></li>
-                    <li class="manufacturers-item"><a href="#"><img src="img/_metabo.jpg" alt="metabo" width="204" height="69"></a></li>
+                    <li class="manufacturers-item"><a href="#"><img src="img/makita.jpg" alt="Makita" width="123" height="40"></a></li>
+                    <li class="manufacturers-item"><a href="#"><img src="img/dewalt.jpg" alt="Dewalt" width="146" height="44"></a></li>
+                    <li class="manufacturers-item"><a href="#"><img src="img/interskol.jpg" alt="Интерскол" width="184" height="32"></a></li>
+                    <li class="manufacturers-item"><a href="#"><img src="img/hitachi.jpg" alt="Hitachi" width="169" height="31"></a></li>
+                    <li class="manufacturers-item"><a href="#"><img src="img/lg.jpg" alt="LG" width="121" height="73"></a></li>
+                    <li class="manufacturers-item"><a href="#"><img src="img/aeg.jpg" alt="AEG" width="151" height="96"></a></li>
+                    <li class="manufacturers-item"><a href="#"><img src="img/metabo.jpg" alt="metabo" width="204" height="69"></a></li>
                 </ul>
             </section>
         </div>
@@ -242,7 +243,7 @@
                 <section class="contacts">
                     <h2>Контакты</h2>
                     <p>Вы можете забрать товар сами, заехав в наш офис:</p>
-                    <a class="map" href="#"><img src="img/map-mini.jpg" alt="Большая Конюшенная ул., 19" width="300" height="158"></a>
+                    <a class="map" href="https://yandex.ru/maps/2/saint-petersburg/?utm_source=geoblock_maps_moscow&ll=30.323838%2C59.938654&z=18&mode=search&ol=biz&oid=1284388067" target="_blank"><img src="img/map-mini.jpg" alt="Большая Конюшенная ул., 19" width="300" height="158"></a>
                     <a class="btn modal-open" href="#">Заблудились? Напишите нам!</a>
                 </section>
             </div>
@@ -254,7 +255,7 @@
             <div class="container">
                 <div class="footer-info">
                     <span class="footer-logo">Техномарт</span>
-                    <p>г.Санкт-Петербург, ул.Б.Конюшенная, д. 19/8<br>
+                    <p>г.Санкт-Петербург, ул.Б.Конюшенная, д. 19/8
                     +7 (812) 555-05-55</p>
                 </div>
                 <nav class="footer-nav">
