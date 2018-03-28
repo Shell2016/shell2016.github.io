@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>HTML Academy: Техномарт - Каталог</title>
-    <link href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700|PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700%7CPT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -63,7 +63,7 @@
     <main>
         <div class="container">
             <ul class="breadcrumbs">
-                <li><a href="index.html">Главная</a></li>
+                <li><a href="index.html" class="breadcrumbs-home"><span class="visually-hidden">Главная</span></a></li>
                 <li><a href="#">Каталог</a></li>
                 <li><a href="#">Инструмент</a></li>
                 <li><a>Перфораторы</a></li>
@@ -77,15 +77,17 @@
                             <p>Фильтр:</p>
                             <fieldset class="filter-fieldset filter-price">
                                 <legend>Цена:</legend>
-                                <div class="range-filter-top">
-                                    <div class="range-control range-control-min"></div>
-                                    <div class="range-control range-control-max"></div>
-                                    <div class="range-bar"></div>
+                                <div class="range-controls">
+                                    <div class="range-scale">
+                                        <div class="range-bar"></div>
+                                    </div>
+                                    <div class="range-toggle range-toggle-min"></div>
+                                    <div class="range-toggle range-toggle-max"></div>
                                 </div>
-                                <div class="range-filter-bottom">
+                                <div class="price-controls">
                                     <input class="range-input range-input-min" type="text" name="min-price" id="filter-min-price" value="0">
                                     <label for="filter-min-price" class="visually-hidden">Минимальная цена</label>
-                                    <span class="input-dash">-</span>
+                                    <span class="price-controls-dash"></span>
                                     <input class="range-input range-input-max" type="text" name="max-price" id="filter-max-price" value="30000">
                                     <label for="filter-max-price" class="visually-hidden">Максимальная цена</label>
                                 </div>
@@ -95,23 +97,23 @@
                                 <ul>
                                     <li class="filter-manufacturers-item">
                                         <input class="checkbox-filter visually-hidden" type="checkbox" name="checkbox-bosch" id="filter-bosch" checked>
-                                        <label for="filter-bosch">Bosch</label>
+                                        <label class="checkbox-label" for="filter-bosch"><span class="checkbox-indicator"></span>Bosch</label>
                                     </li>
                                     <li class="filter-manufacturers-item">
                                         <input class="checkbox-filter visually-hidden" type="checkbox" name="checkbox-interskol" id="filter-interskol">
-                                        <label for="filter-interskol">Интерскол</label>
+                                        <label class="checkbox-label" for="filter-interskol"><span class="checkbox-indicator"></span>Интерскол</label>
                                     </li>
                                     <li class="filter-manufacturers-item">
                                         <input class="checkbox-filter visually-hidden" type="checkbox" name="checkbox-makita" id="filter-makita" checked>
-                                        <label for="filter-makita">Makita</label>
+                                        <label class="checkbox-label" for="filter-makita"><span class="checkbox-indicator"></span>Makita</label>
                                     </li>
                                     <li class="filter-manufacturers-item">
                                         <input class="checkbox-filter visually-hidden" type="checkbox" name="checkbox-dewalt" id="filter-dewalt">
-                                        <label for="filter-dewalt">Dewalt</label>
+                                        <label class="checkbox-label" for="filter-dewalt"><span class="checkbox-indicator"></span>Dewalt</label>
                                     </li>
                                     <li class="filter-manufacturers-item">
                                         <input class="checkbox-filter visually-hidden" type="checkbox" name="checkbox-hitachi" id="filter-hitachi">
-                                        <label for="filter-hitachi">Hitachi</label>
+                                        <label class="checkbox-label" for="filter-hitachi"><span class="checkbox-indicator"></span>Hitachi</label>
                                     </li>
                                 </ul>
                             </fieldset>
@@ -119,12 +121,12 @@
                                 <legend>Питание:</legend>
                                 <ul>
                                     <li class="filter-power-item">
-                                        <input class="radio-filter visually-hidden" type="radio" name="power" id="filter-battery" value="battery">
-                                        <label for="filter-battery">Аккумуляторные</label>
+                                        <input class="radio-filter visually-hidden" type="radio" name="power" value="battery" id="filter-battery" checked>
+                                        <label class="radio-label" for="filter-battery"><span class="radio-indicator"></span>Аккумуляторные</label>
                                     </li>
                                     <li class="filter-power-item">
-                                        <input class="radio-filter visually-hidden" type="radio" name="power" id="filter-network" value="network">
-                                        <label for="filter-network">Сетевые</label>
+                                        <input class="radio-filter visually-hidden" type="radio" name="power" value="network" id="filter-network">
+                                        <label class="radio-label" for="filter-network"><span class="radio-indicator"></span>Сетевые</label>
                                     </li>
                                 </ul>
                             </fieldset>
@@ -135,11 +137,11 @@
                     <div class="catalog-grid">
                         <div class="sorting">
                             <p>Сортировка:</p>
-                            <a href="#" class="sorting-item">По цене</a>
+                            <a href="#" class="sorting-item sorting-current">По цене</a>
                             <a href="#" class="sorting-item">По типу</a>
                             <a href="#" class="sorting-item">По функционалу</a>
-                            <a href="#" class="sorting-up">Вверх</a>
-                            <a href="#" class="sorting-down">Вниз</a>
+                            <a href="#" class="sorting-arrow sorting-up sorting-current"><span class="visually-hidden">По возрастанию</span></a>
+                            <a href="#" class="sorting-arrow sorting-down"><span class="visually-hidden">По убыванию</span></a>
                         </div>
 
                         <ul class="products-list products-list-catalog">
@@ -149,7 +151,7 @@
                                     <a class="btn bookmark-btn" href="#">В закладки</a>
                                 </div>
                                 <div class="product-image">
-                                    <img src="img/drill_2000_3000.jpg" alt="BOSCH BFG 3000" width="220" height="150">
+                                    <img src="img/drill_3000.jpg" alt="BOSCH BFG 3000" width="220" height="150">
                                 </div>
                                 <h3>Перфоратор BOSCH BFG 3000</h3>
                                 <span class="price old-price">22500 Р.</span>
@@ -175,7 +177,7 @@
                                     <a class="btn bookmark-btn" href="#">В закладки</a>
                                 </div>
                                 <div class="product-image">
-                                    <img src="img/drill_2000_3000.jpg" alt="BOSCH BFG 2000" width="220" height="150">
+                                    <img src="img/drill_2000.jpg" alt="BOSCH BFG 2000" width="220" height="150">
                                 </div>
                                 <h3>Перфоратор BOSCH BFG 2000</h3>
                                 <span class="price old-price"></span>
@@ -188,7 +190,7 @@
                                     <a class="btn bookmark-btn" href="#">В закладки</a>
                                 </div>
                                 <div class="product-image">
-                                    <img src="img/drill_2000_3000.jpg" alt="BOSCH BFG 3000" width="220" height="150">
+                                    <img src="img/drill_3000.jpg" alt="BOSCH BFG 3000" width="220" height="150">
                                 </div>
                                 <h3>Перфоратор BOSCH BFG 3000</h3>
                                 <span class="price old-price">22500 Р.</span>
@@ -214,7 +216,7 @@
                                     <a class="btn bookmark-btn" href="#">В закладки</a>
                                 </div>
                                 <div class="product-image">
-                                    <img src="img/drill_2000_3000.jpg" alt="BOSCH BFG 2000" width="220" height="150">
+                                    <img src="img/drill_2000.jpg" alt="BOSCH BFG 2000" width="220" height="150">
                                 </div>
                                 <h3>Перфоратор BOSCH BFG 2000</h3>
                                 <span class="price old-price"></span>
@@ -227,7 +229,7 @@
                                     <a class="btn bookmark-btn" href="#">В закладки</a>
                                 </div>
                                 <div class="product-image">
-                                    <img src="img/drill_2000_3000.jpg" alt="BOSCH BFG 3000" width="220" height="150">
+                                    <img src="img/drill_3000.jpg" alt="BOSCH BFG 3000" width="220" height="150">
                                 </div>
                                 <h3>Перфоратор BOSCH BFG 3000</h3>
                                 <span class="price old-price">22500 Р.</span>
@@ -253,7 +255,7 @@
                                     <a class="btn bookmark-btn" href="#">В закладки</a>
                                 </div>
                                 <div class="product-image">
-                                    <img src="img/drill_2000_3000.jpg" alt="BOSCH BFG 2000" width="220" height="150">
+                                    <img src="img/drill_2000.jpg" alt="BOSCH BFG 2000" width="220" height="150">
                                 </div>
                                 <h3>Перфоратор BOSCH BFG 2000</h3>
                                 <span class="price old-price"></span>
@@ -289,7 +291,7 @@
             <div class="container">
                 <div class="footer-info">
                     <span class="footer-logo">Техномарт</span>
-                    <p>г.Санкт-Петербург, ул.Б.Конюшенная, д. 19/8
+                    <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8
                     +7 (812) 555-05-55</p>
                 </div>
                 <nav class="footer-nav">
@@ -317,17 +319,17 @@
                 Все права защищены</p>
                 </div>
                  <div class="social-block">
-                    <a class="social-btn social-btn-vk" href="#">VK</a>
-                    <a class="social-btn social-btn-fb" href="#">Facebook</a>
-                    <a class="social-btn social-btn-inst" href="#">Instagram</a>
+                    <a class="social-btn social-btn-vk" href="#"><span class="visually-hidden">VK</span><img src="img/vk-icon.svg" width="26" height="15" alt="VK"></a>
+                    <a class="social-btn social-btn-fb" href="#"><span class="visually-hidden">Facebook</span><img src="img/fb-icon.svg" width="12" height="22" alt="Facebook"></a>
+                    <a class="social-btn social-btn-inst" href="#"><span class="visually-hidden">Instagram</span><img src="img/insta-icon.svg" width="21" height="21" alt="Instagram"></a>
                 </div>
 
-                <div class="footer-feedback-developed">
+                <div class="footer-feedback-developed footer-feedback">
                     <p>Обратная связь:</p>
                     <a href="#">mail@htmlacademy.ru</a>
                 </div>
 
-                <div class="footer-feedback-developed">
+                <div class="footer-feedback-developed footer-developed">
                     <p>Разработано - </p>
                     <a href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a>
                 </div>
@@ -336,7 +338,7 @@
 
     </footer>
 
-    <section class="modal-cart">
+    <section class="modal modal-cart">
         <h2 class="visually-hidden">Добавление товара в корзину</h2>
         <div class="modal-cart-top">
             <p>Товар добавлен в корзину!</p>
@@ -345,8 +347,8 @@
             <a href="#" class="btn">Оформить заказ</a>
             <a href="#" class="btn btn-continue">Продолжить покупки</a>
         </div>
-        <button class="modal-close" type="button">Закрыть форму</button>
+        <button class="modal-close" type="button"><span class="visually-hidden">Закрыть форму</span></button>
     </section>
-
+<script src="js/script.js"></script>
 </body>
 </html>
