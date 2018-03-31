@@ -6,6 +6,7 @@ var cartOpen = document.querySelectorAll(".buy-btn");
 var cart = document.querySelector(".modal-cart")
 var close = document.querySelectorAll(".modal-close");
 var modal = document.querySelectorAll(".modal");
+var overlay = document.querySelector(".overlay");
 
 
 if (feedback) {
@@ -13,12 +14,20 @@ if (feedback) {
     var username = feedback.querySelector(".name-field");
     var email = feedback.querySelector(".email-field");
     var comment = feedback.querySelector(".comment-field");
-    var nameStorage = localStorage.getItem("username");
-    var emailStorage = localStorage.getItem("email");
+    var isStorageSupport = true;
+    var nameStorage = "";
+    var emailStorage = "";
+    try {
+        nameStorage = localStorage.getItem("username");
+        emailStorage = localStorage.getItem("email");
+    } catch (err) {
+    isStorageSupport = false;
+    }
 
     feedbackOpen.addEventListener("click", function (event) {
         event.preventDefault();
         feedback.classList.add("modal-show");
+        overlay.classList.add("overlay-show");
         if (nameStorage && emailStorage) {
             username.value = nameStorage;
             email.value = emailStorage;
@@ -29,12 +38,17 @@ if (feedback) {
     });
 
     feedbackForm.addEventListener("submit", function(event) {
-        event.preventDefault();
         if (!username.value || !email.value || !comment.value) {
-            console.log ("Заполните поля формы!");
+            event.preventDefault();
+            feedback.classList.remove("modal-error");
+            feedback.offsetWidth = feedback.offsetWidth;
+            feedback.classList.add("modal-error");
         } else {
-            localStorage.setItem("username", username.value);
-            localStorage.setItem("email", email.value);
+            if (isStorageSupport) {
+                localStorage.setItem("username", username.value);
+                localStorage.setItem("email", email.value);
+            }
+            overlay.classList.remove("overlay-show");
         }
     });
 }
@@ -44,6 +58,7 @@ if (map) {
     mapOpen.addEventListener("click", function (event) {
         event.preventDefault();
         map.classList.add("modal-show");
+        overlay.classList.add("overlay-show");
     });
 }
 
@@ -52,6 +67,7 @@ for (var i = 0; i < cartOpen.length; i++) {
     cartOpen[i].addEventListener("click", function (event) {
         event.preventDefault();
         cart.classList.add("modal-show");
+        overlay.classList.add("overlay-show");
     });
 }
 
@@ -61,17 +77,33 @@ for (i = 0; i < close.length; i++) {
         event.preventDefault();
         for (var y = 0; y < modal.length; y++) {
             modal[y].classList.remove("modal-show");
+            modal[y].classList.remove("modal-error");
         }
+        overlay.classList.remove("overlay-show");
     });
 }
 
+
 window.addEventListener("keydown", function(event) {
     if (event.keyCode === 27 ) {
-        event.preventDefault();
         for (var y = 0; y < modal.length; y++) {
-            modal[y].classList.remove("modal-show");
+            if (modal[y].classList.contains("modal-show")) {
+                event.preventDefault();
+                modal[y].classList.remove("modal-show");
+            }
+            modal[y].classList.remove("modal-error");
         }
+        overlay.classList.remove("overlay-show");
     }
+});
+
+overlay.addEventListener("click", function (event) {
+    event.preventDefault();
+    for (var y = 0; y < modal.length; y++) {
+            modal[y].classList.remove("modal-show");
+            modal[y].classList.remove("modal-error");
+        }
+    overlay.classList.remove("overlay-show");
 });
 
 
